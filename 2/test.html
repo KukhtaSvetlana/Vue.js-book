@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span class="price">jnjnjnj</span>
+    <script>
+        var price = 99;
+        var index = 3;
+        var priceString = (price / 100).toFixed(2);
+
+        console.log(priceString);
+        var priceArray = priceString.split("").reverse();
+        // console.log(priceArray);
+
+        while (priceArray.length > index + 3){
+            // priceArray.splice(index + З, 0, ", ");
+            // index += 4;
+        }
+        console.log(priceString + "$");
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Vue.js Pet Depot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div id="app">
+        <p>
+            Area is equal to: {{ area }}
+        </p>
+        <button v-on:click="length_area += 1"> Add length</button>
+        <button v-on:click="width_area += 1"> Add width</button>
+    </div>
+
+    <script type="text/javascript">
+         var area = new Vue({
+             el: '#app',
+             data: {
+                 length_area: 5,
+                 width_area: 3
+             },
+             computed: {
+                 area: function () {
+                     return this.length_area * this.width_area;
+                 }
+             },
+             watch: {
+                 length_area: function(newVal, oldVal) {                //#E
+                     console.log('The old value of length was: '     //#E
+                         + oldVal +                          //#E
+                         '\nThe new value of length is: '    //#E
+                         + newVal);                          //#E
+                 },
+                 width_area: function(newVal, oldVal) {                 //#F
+                     console.log('The old value of width was: '      //#F
+                         + oldVal +                          //#F
+                         '\nThe new value of width is: '     //#F
+                         + newVal);                          //#F
+                 },
+                 area: function(newVal, oldVal) {                  //#G
+                     console.log('The old value of area was: '       //#G
+                         + oldVal +                          //#G
+                         '\nThe new value of area is: '      //#G
+                         + newVal);                          //#G
+                 }
+             },
+             beforeUpdate: function() {                             //#H
+                 console.log('All those data changes happened '       //#H
+                     + 'before the output gets updated.');    //#H
+             }
+         });
+
+    </script>
+</body>
+</html>
