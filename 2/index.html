@@ -19,17 +19,8 @@
                      <div class="navbar-header">
                          <h1 v-text="sitename"></h1>
                      </div>
-                     <div class="avbar navbar-right navbar-nav cart">
-                         <button class="btn btn-default btn-lg"
-                                 type="button"
-                                 v-on:click="showCheckout"
-                         >
-                         <span class="glyphicon glyphicon-shopping-cart">{{cartItemCount}}</span>
-                         </button>
-                     </div>
-                    </div>
                  </div>
-<!--             </div>-->
+             </div>
          </header>
         <main>
             <div class="row">
@@ -42,14 +33,6 @@
                     <h2 v-text="product.title"></h2>
                     <p v-html="product.description"></p>
                     <p class="price">{{ product.price | formatPrice }}</p>
-                    <button
-                            type="button"
-                            @click="addCart"
-                            v-if="canAddToCart"
-                    >Add to Cart</button>
-                    <button
-                            v-else
-                    >Add to Cart</button>
                 </div>
             </div>
         </main>
@@ -73,22 +56,7 @@
                 },
                 cart: []
             },
-            computed: {
-                cartItemCount: function () {
-                    return this.cart.length;
-                },
-                canAddToCart: function () {
-                    return this.product.availableinventory > this.cartItemCount;
-                }
-            },
-            methods:{
-                addCart: function () {
-                    this.cart.push(this.product.id);
-                },
-                showCheckout(){
-                    this.showProduct = this.showProduct ? true : false;
-                }
-            },
+
             filters: {
                 formatPrice: function(price) {	//#B
                     if (!parseInt(price)) { return ""; }	//#C

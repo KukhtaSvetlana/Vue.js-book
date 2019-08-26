@@ -12,52 +12,142 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-    <div id="app">
-        <p>
-            Area is equal to: {{ area }}
-        </p>
-        <button v-on:click="length_area += 1"> Add length</button>
-        <button v-on:click="width_area += 1"> Add width</button>
-    </div>
+<div id="app">
+    <header>
+        <div class="container-fluid">
+            <div class="navbar navbar-default">
+                <div class="navbar-header">
+                    <h1 v-text="sitename"></h1>
+                </div>
+                <div class="avbar navbar-right navbar-nav cart">
+                    <button class="btn btn-default btn-lg"
+                            type="button"
+                            v-on:click="showCheckout"
+                    >
+                        <span class="glyphicon glyphicon-shopping-cart">{{cartItemCount}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--             </div>-->
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+                <figure>
+                    <img v-bind:src="product.image">
+                </figure>
+            </div>
+            <div class="col-md-6 col-md-offset-2 description">
+                <h2 v-text="product.title"></h2>
+                <p v-html="product.description"></p>
+                <p class="price">{{ product.price | formatPrice }}</p>
+                <button
+                        type="button"
+                        @click="addCart"
+                        v-if="canAddToCart"
+                >Add to Cart</button>
+                <button
+                        v-else
+                >Add to Cart</button>
+            </div>
+        </div>
+    </main>
+</div>
 
-    <script type="text/javascript">
-         var area = new Vue({
-             el: '#app',
-             data: {
-                 length_area: 5,
-                 width_area: 3
-             },
-             computed: {
-                 area: function () {
-                     return this.length_area * this.width_area;
-                 }
-             },
-             watch: {
-                 length_area: function(newVal, oldVal) {                //#E
-                     console.log('The old value of length was: '     //#E
-                         + oldVal +                          //#E
-                         '\nThe new value of length is: '    //#E
-                         + newVal);                          //#E
-                 },
-                 width_area: function(newVal, oldVal) {                 //#F
-                     console.log('The old value of width was: '      //#F
-                         + oldVal +                          //#F
-                         '\nThe new value of width is: '     //#F
-                         + newVal);                          //#F
-                 },
-                 area: function(newVal, oldVal) {                  //#G
-                     console.log('The old value of area was: '       //#G
-                         + oldVal +                          //#G
-                         '\nThe new value of area is: '      //#G
-                         + newVal);                          //#G
-                 }
-             },
-             beforeUpdate: function() {                             //#H
-                 console.log('All those data changes happened '       //#H
-                     + 'before the output gets updated.');    //#H
-             }
-         });
-
-    </script>
+<script type="text/javascript">
+    var APP_LOG_LIFECYCLE_EVENTS = false;
+    var webstore = new Vue({
+        el: '#app',
+        data: {
+            sitename: "Vue.js Pet Depot",
+            showProduct: true,
+            product: {
+                id: 1001,
+                title: "Cat Foot, 25lb bag",
+                description: "A 25 pound bag of <em> irresistible </em>"  +
+                    "organic goodness for your cat.",
+                price: 2000,
+                image: "images/product-fullsize.png",
+                availableinventory: 5 // ограниченое количество покупок
+            },
+            cart: []
+        },
+        computed: {
+            cartItemCount: function () {
+                return this.cart.length;
+            },
+            canAddToCart: function () {
+                return this.product.availableinventory > this.cartItemCount;
+            }
+        },
+        methods:{
+            addCart: function () {
+                this.cart.push(this.product.id);
+            },
+            showCheckout(){
+                this.showProduct = this.showProduct ? true : false;
+            }
+        },
+        filters: {
+            formatPrice: function(price) {	//#B
+                if (!parseInt(price)) { return ""; }	//#C
+                if (price > 99999) {	//#D
+                    var priceString = (price / 100).toFixed(2);	//#E
+                    var priceArray = priceString.split("").reverse();	//#F
+                    var index = 3;	//#F
+                    while (priceArray.length > index + 3) {	//#F
+                        priceArray.splice(index+3, 0, ",");	//#F
+                        index += 4;	//#F
+                    }	//#F
+                    return "$" + priceArray.reverse().join("");	//#G
+                }
+                else {
+                    return "$" + (price / 100).toFixed(2);	//#H
+                }
+            }
+        },
+        beforeCreate: function() {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeCreate");
+            }
+        },
+        created: function(){
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("created");
+            }
+        },
+        beforeMount: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeMount");
+            }
+        },
+        mounted: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("mounted");
+            }
+        },
+        beforeUpdate: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeUpdate");
+            }
+        },
+        update: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("update");
+            }
+        },
+        beforeDestroy: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeDestroy");
+            }
+        },
+        destroyed: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("destroyed");
+            }
+        }
+    });
+</script>
 </body>
 </html>
