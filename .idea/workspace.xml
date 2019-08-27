@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc3dd274-d22c-4eb9-afef-3839d030a638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="fc3dd274-d22c-4eb9-afef-3839d030a638" name="Default Changelist" comment="Обновление">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4/js/vue.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/2/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/2/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/3/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/4/basket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/4/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/4/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,11 +69,35 @@
       <workItem from="1566543369862" duration="9983000" />
       <workItem from="1566567300614" duration="582000" />
       <workItem from="1566801274350" duration="6848000" />
-      <workItem from="1566811151985" duration="6851000" />
+      <workItem from="1566811151985" duration="10243000" />
+      <workItem from="1566888722466" duration="11508000" />
     </task>
+    <task id="LOCAL-00001" summary="Обновление">
+      <created>1566823318259</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566823318259</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Обновление" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновление" />
   </component>
 </project>
