@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js Pet Depot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app5.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script>
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="container-fluid">
+            <div class="navbar navbar-default">
+                <div class="navbar-header">
+                    <h1 v-text="sitename"></h1>
+                </div>
+                <div class="avbar navbar-right navbar-nav cart">
+                    <button class="btn btn-default btn-lg"
+                            type="button"
+                            v-on:click="showCheckout">
+                        <span class="glyphicon glyphicon-shopping-cart">{{cartItemCount}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--             </div>-->
+    </header>
+    <main>
+        <div v-if="showProduct">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    <figure>
+                        <img v-bind:src="product.image">
+                    </figure>
+                </div>
+                <div class="col-md-6 col-md-offset-2 description">
+                    <h2 v-text="product.title"></h2>
+                    <p v-html="product.description"></p>
+                    <p class="price">{{ product.price | formatPrice }}</p>
+                    <button
+                            type="button"
+                            @click="addCart"
+                            v-if="canAddToCart"
+                    >Add to Cart</button>
+                    <button
+                            v-else
+                    >Add to Cart</button>
+                    <span clas="inventory-message"
+                          v-if="product.availableinventory - cartItemCount === 0 ">
+                            All Out!
+                    </span>
+                    <span clas="inventory-message"
+                          v-else-if="product.availableinventory - cartItemCount < 5">
+                        Only {{ product.availableinventory - cartItemCount }} left!
+                    </span>
+                    <span clas="inventory-message"
+                          v-else>
+                        Buy Now!
+                    </span>
+                    <div class="rating">
+                        <span v-for="n in 5" v-bind:class="{'rating-active': checkRating(n)}">&#9734;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+             <div class="row">
+                <div v-for="product in products">
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-1">
+                            <figure>
+                                <img v-bind:src="product.image">
+                            </figure>
+                        </div>
+                        <div class="col-md-6 col-md-offset-2 description">
+                            <h2 v-text="product.title"></h2>
+                            <p v-html="product.description"></p>
+                            <p class="price">{{ product.price | formatPrice }}</p>
+                            <button
+                                    type="button"
+                                    @click="addCart"
+                                    v-if="canAddToCart"
+                            >Add to Cart</button>
+                            <button
+                                    v-else
+                            >Add to Cart</button>
+                            <span clas="inventory-message"
+                                  v-if="product.availableinventory - cartItemCount === 0 ">
+                            All Out!
+                    </span>
+                            <span clas="inventory-message"
+                                  v-else-if="product.availableinventory - cartItemCount < 5">
+                        Only {{ product.availableinventory - cartItemCount }} left!
+                    </span>
+                            <span clas="inventory-message"
+                                  v-else>
+                        Buy Now!
+                    </span>
+                            <div class="rating">
+                                <span v-for="n in 5" v-bind:class="{'rating-active': checkRating(n)}">&#9734;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </main>
+</div>
+<script src="js/vue.js"></script>
+<script type="text/javascript">
+    var APP_LOG_LIFECYCLE_EVENTS = false;
+    var webstore = new Vue({
+        el: '#app',
+        data: {
+            sitename: "Vue.js Pet Depot",
+            showProduct: true,
+            product: {
+                id: 1001,
+                title: "Cat Foot, 25lb bag",
+                description: "A 25 pound bag of <em> irresistible </em>"  +
+                    "organic goodness for your cat.",
+                price: 2000,
+                image: "images/product-fullsize.png",
+                availableinventory: 10, // ограниченое количество покупок
+                rating: 3
+            },
+            products: [],
+            cart: []
+        },
+        computed: {
+            cartItemCount: function () {
+                return this.cart.length;
+            },
+            canAddToCart: function () {
+                return this.product.availableinventory > this.cartItemCount;
+            }
+        },
+        methods:{
+            addCart: function () {
+                this.cart.push(this.product.id);
+            },
+            showCheckout(){
+                this.showProduct = this.showProduct ? true : false;
+            },
+            checkRating(n){
+                return this.product.rating - n >= 0;
+            }
+        },
+        filters: {
+            formatPrice: function(price) {	//#B
+                if (!parseInt(price)) { return ""; }	//#C
+                if (price > 99999) {	//#D
+                    var priceString = (price / 100).toFixed(2);	//#E
+                    var priceArray = priceString.split("").reverse();	//#F
+                    var index = 3;	//#F
+                    while (priceArray.length > index + 3) {	//#F
+                        priceArray.splice(index+3, 0, ",");	//#F
+                        index += 4;	//#F
+                    }	//#F
+                    return "$" + priceArray.reverse().join("");	//#G
+                }
+                else {
+                    return "$" + (price / 100).toFixed(2);	//#H
+                }
+            }
+        },
+        beforeCreate: function() {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeCreate");
+            }
+        },
+        created: function(){
+            axios.get('./products.json')
+                .then((response) => {
+                    this.products = response.data.products;
+                    console.log(this.products);
+                });
+        },
+        beforeMount: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeMount");
+            }
+        },
+        mounted: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("mounted");
+            }
+        },
+        beforeUpdate: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeUpdate");
+            }
+        },
+        update: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("update");
+            }
+        },
+        beforeDestroy: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("beforeDestroy");
+            }
+        },
+        destroyed: function () {
+            if(APP_LOG_LIFECYCLE_EVENTS) {
+                console.log("destroyed");
+            }
+        }
+    });
+
+    // new Vue({
+    //     data: {
+    //         lendth: 5,
+    //         width: 6
+    //     },
+    //     computed: {
+    //         area: function () {
+    //             return this.lendth * this.width;
+    //         }
+    //     }
+    // });
+</script>
+</body>
+</html>
