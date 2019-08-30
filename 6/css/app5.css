@@ -46,13 +46,9 @@ header h1{
     max-width:100%;
 }
 .figure {
-    width: 200px;
-    height: 237px;
+
 }
-img {
-    width: 100%;
-    height: auto;
-}
+
 .rating-active:before {
     content: "\2605";
     position: absolute;

@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc3dd274-d22c-4eb9-afef-3839d030a638" name="Default Changelist" comment="Update">
-      <change afterPath="$PROJECT_DIR$/5/basket.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/css/app5.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/images/product-fullsize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/js/vue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/js/vue.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/products.json" afterDir="false" />
+    <list default="true" id="fc3dd274-d22c-4eb9-afef-3839d030a638" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/5/images/Mindy_Mouse_cat_toy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/images/cat-house.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/images/cat-litter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/images/laser-pointer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/images/yarn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/basket.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/css/app5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/images/Mindy_Mouse_cat_toy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/images/cat-house.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/images/cat-litter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/images/laser-pointer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/images/product-fullsize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/images/yarn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/js/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5/css/app5.css" beforeDir="false" afterPath="$PROJECT_DIR$/5/css/app5.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/5/products.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +84,8 @@
       <workItem from="1566801274350" duration="6848000" />
       <workItem from="1566811151985" duration="10243000" />
       <workItem from="1566888722466" duration="13064000" />
-      <workItem from="1566975688817" duration="10041000" />
+      <workItem from="1566975688817" duration="11037000" />
+      <workItem from="1567059698871" duration="5526000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <created>1566823318259</created>
@@ -93,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566996731201</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update">
+      <created>1566996896261</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566996896261</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
