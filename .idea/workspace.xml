@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc3dd274-d22c-4eb9-afef-3839d030a638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/5/images/Mindy_Mouse_cat_toy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/images/cat-house.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/images/cat-litter.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/images/laser-pointer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5/images/yarn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/basket.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/css/app5.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/images/Mindy_Mouse_cat_toy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/images/cat-house.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/images/cat-litter.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/images/laser-pointer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/images/product-fullsize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/images/yarn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/js/vue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/js/vue.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6/products.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5/css/app5.css" beforeDir="false" afterPath="$PROJECT_DIR$/5/css/app5.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/5/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/5/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/6/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +68,11 @@
       <workItem from="1566888722466" duration="13064000" />
       <workItem from="1566975688817" duration="11037000" />
       <workItem from="1567059698871" duration="5526000" />
+      <workItem from="1567708535209" duration="136000" />
+      <workItem from="1567708839930" duration="3254000" />
+      <workItem from="1567957003073" duration="3606000" />
+      <workItem from="1568137912359" duration="105000" />
+      <workItem from="1568138319456" duration="2680000" />
     </task>
     <task id="LOCAL-00001" summary="Обновление">
       <created>1566823318259</created>
@@ -129,6 +116,20 @@
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
